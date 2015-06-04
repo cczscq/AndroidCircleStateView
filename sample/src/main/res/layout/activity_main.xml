@@ -11,8 +11,8 @@
 
     <cn.spade.android.circlestateview.CircleStateView
         android:id="@+id/circleStateView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         ui:csvWholeForegroundColor="@color/customize_whole_foreground"
         ui:csvInnerBackgroundColor="@color/customize_inner_background"
         ui:csvInnerText="@string/customize_inner_text_content"
@@ -20,6 +20,7 @@
         ui:csvInnerWaterColor="@color/customize_inner_water"
         ui:csvStrokeColor="@color/customize_stroke"
         ui:csvStrokeWidth="4dp"
+        android:layout_centerHorizontal="true"
         />
 
 </RelativeLayout>

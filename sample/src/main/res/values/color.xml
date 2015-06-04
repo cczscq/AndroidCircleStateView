@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="stroke_color">#000000</color>
-    <color name="text_color">#000000</color>
+    <color name="default_background">#b1b8c7</color>
+    <color name="text_color">#242424</color>
 
     <color name="sample_whole_foreground">#73f23f</color>
     <color name="sample_inner_background">#5d5d5a</color>

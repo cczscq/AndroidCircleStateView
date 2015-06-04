@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -138,6 +139,9 @@ public class CircleStateView extends View {
    */
   public CircleStateView setCsvTextTypeface(Typeface textTypeface) {
     this.textTypeface = textTypeface;
+    if (innerTextPaint != null){
+      innerTextPaint.setTypeface(textTypeface);
+    }
     return this;
   }
 
@@ -191,18 +195,18 @@ public class CircleStateView extends View {
   @Override
   protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
-
-
+//    Log.e("TAG", "csvInnerWaterProgress = " + csvInnerWaterProgress);
+//    Log.e("TAG", "innerBackgroundRectF = " + innerBackgroundRectF);
     if (csvInnerWaterProgress == 100){
       drawCsvWholeForeground(canvas);
     } else {
       drawCsvStroke(canvas);
       drawCsvInnerBackground(canvas);
-      drawCsvInnerWater(canvas);
+      if (textTypeface == null){
+        drawCsvInnerWater(canvas);
+      }
     }
     drawCsvInnerText(canvas);
-
-
   }
 
   private void init(AttributeSet attrs){
@@ -285,6 +289,7 @@ public class CircleStateView extends View {
 
   private void drawCsvWholeForeground(Canvas canvas){
     canvas.save();
+    initWholeForegroundPaint();
     canvas.drawCircle(wholeForegroundRectF.centerX(), wholeForegroundRectF.centerY(), wholeForegroundRectF.height() / 2, wholeForegroundPaint);
     canvas.restore();
   }
@@ -296,7 +301,7 @@ public class CircleStateView extends View {
   }
 
   private void drawCsvInnerText(Canvas canvas){
-    int textSize = (int) ((minWidth - csvStrokeWidth * 2) / 4);
+    int textSize = (int) ((minWidth - csvStrokeWidth * 2) / 2);
     innerTextPaint.setTextSize(textSize);
     Paint.FontMetrics fm = innerTextPaint.getFontMetrics();
     float textHeight = (float) Math.ceil(fm.descent - fm.top);
@@ -323,7 +328,11 @@ public class CircleStateView extends View {
   }
 
   private void computerWaterRectF(){
-    innerWaterRectF = wholeForegroundRectF;
+    innerWaterRectF.left = wholeForegroundRectF.left;
+    innerWaterRectF.top = wholeForegroundRectF.top;
+    innerWaterRectF.right = wholeForegroundRectF.right;
+    innerWaterRectF.bottom = wholeForegroundRectF.bottom;
+
     if (csvInnerWaterProgress != 100){
       innerWaterRectF.top += (1 - csvInnerWaterProgress / 100.0f) * wholeForegroundRectF.height();
     }

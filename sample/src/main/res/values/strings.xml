@@ -7,4 +7,12 @@
 
     <string name="customize_inner_text_content">95</string>
     <string name="sample_inner_text_content">99</string>
+
+    <string name="font_text">使用自定义字体</string>
+    <string name="change_text">换一换</string>
+    <string name="font_text_01">\ue605</string>
+    <string name="font_text_02">\ue619</string>
+    <string name="font_text_03">\ue61a</string>
+    <string name="font_text_04">\ue648</string>
+    <string name="font_text_05">\ue649</string>
 </resources>

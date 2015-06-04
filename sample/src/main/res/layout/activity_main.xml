@@ -3,16 +3,36 @@
                 xmlns:ui="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/default_background"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <com.cengalabs.flatui.views.FlatToggleButton
+            android:id="@+id/flatToggleButton"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            ui:fl_space="14dp"
+            ui:fl_cornerRadius="18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/font_text"
+            android:textColor="@color/text_color"/>
+    </LinearLayout>
 
     <cn.spade.android.circlestateview.CircleStateView
         android:id="@+id/circleStateView"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
         ui:csvWholeForegroundColor="@color/customize_whole_foreground"
         ui:csvInnerBackgroundColor="@color/customize_inner_background"
         ui:csvInnerText="@string/customize_inner_text_content"
@@ -20,7 +40,30 @@
         ui:csvInnerWaterColor="@color/customize_inner_water"
         ui:csvStrokeColor="@color/customize_stroke"
         ui:csvStrokeWidth="4dp"
-        android:layout_centerHorizontal="true"
+
         />
+
+    <com.cengalabs.flatui.views.FlatSeekBar
+        android:id="@+id/flatSeekBar"
+        android:layout_below="@id/circleStateView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="80dp"
+        android:max="100"/>
+
+    <com.cengalabs.flatui.views.FlatButton
+        android:id="@+id/flatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/circleStateView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="80dp"
+        android:text="@string/change_text"
+        android:onClick="onChangeThemeButtonClicked"
+        ui:fl_theme="@array/sand"
+        ui:fl_textAppearance="fl_light" />
+
+
 
 </RelativeLayout>

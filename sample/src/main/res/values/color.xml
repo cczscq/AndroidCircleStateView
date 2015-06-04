@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="stroke_color">#000000</color>
+    <color name="text_color">#000000</color>
+
+    <color name="sample_whole_foreground">#73f23f</color>
+    <color name="sample_inner_background">#5d5d5a</color>
+    <color name="sample_inner_text">#000000</color>
+    <color name="sample_inner_water">#3852c3</color>
+    <color name="sample_stroke">#7d28c3</color>
+</resources>

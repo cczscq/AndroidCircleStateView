@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_whole_foreground">#53ff2d</color>
+    <color name="default_inner_background">#b7ffd4</color>
+    <color name="default_inner_text">#353534</color>
+    <color name="default_inner_water">#6f88c3</color>
+    <color name="default_stroke">#23386b</color>
+
+
+    <color name="customize_whole_foreground">#53ff2d</color>
+    <color name="customize_inner_background">#b7ffd4</color>
+    <color name="customize_inner_text">#353534</color>
+    <color name="customize_inner_water">#6f88c3</color>
+    <color name="customize_stroke">#23386b</color>
+</resources>

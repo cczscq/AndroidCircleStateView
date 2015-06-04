@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">sample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="customize_inner_text_content">95</string>
+    <string name="sample_inner_text_content">99</string>
+</resources>

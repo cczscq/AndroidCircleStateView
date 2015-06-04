@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleStateView">
+
+        <!-- 完成状态的颜色 -->
+        <attr name="csvWholeForegroundColor" format="reference"/>
+        <!-- 内圈的背景色 -->
+        <attr name="csvInnerBackgroundColor" format="reference"/>
+        <!-- 内圈文字 -->
+        <attr name="csvInnerText" format="reference"/>
+        <!-- 内圈文字颜色 -->
+        <attr name="csvInnerTextColor" format="reference"/>
+        <!-- 内圈水波颜色 -->
+        <attr name="csvInnerWaterColor" format="reference"/>
+        <!-- 内圈水波高度(百分比) -->
+        <attr name="csvInnerWaterProgress" format="float"/>
+        <!-- 线条的颜色(外圈和水平线) -->
+        <attr name="csvStrokeColor" format="reference"/>
+        <!-- 线条的宽度(外圈和水平线) -->
+        <attr name="csvStrokeWidth" format="dimension"/>
+
+    </declare-styleable>
+</resources>

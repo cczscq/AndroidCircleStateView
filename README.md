@@ -11,9 +11,9 @@ You can define the widgets in XML or create on run time in JAVA.
 
 Art
 -----------
-![Art][1]
-![Art][2]
-![Art][3]
+![Art](https://github.com/cczscq/AndroidCircleStateView/blob/master/art/screen01.jpg)
+![Art](https://github.com/cczscq/AndroidCircleStateView/blob/master/art/screen02.jpg)
+![Art](https://github.com/cczscq/AndroidCircleStateView/blob/master/art/screen03.jpg)
 
 
 	
@@ -37,6 +37,6 @@ License
     limitations under the License.
 
 
- [1]: https://github.com/cczscq/AndroidCircleStateView/blob/master/art/screen01.jpg
+ [1]: 
  [2]: https://github.com/cczscq/AndroidCircleStateView/blob/master/art/screen02.jpg
  [3]: https://github.com/cczscq/AndroidCircleStateView/blob/master/art/screen03.jpg

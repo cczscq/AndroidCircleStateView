@@ -11,9 +11,10 @@ You can define the widgets in XML or create on run time in JAVA.
 
 Art
 -----------
-![Themes][1]
-![Themes][2]
-![Themes][3]
+![Art][1]
+![Art][2]
+![Art][3]
+
 
 	
 ```

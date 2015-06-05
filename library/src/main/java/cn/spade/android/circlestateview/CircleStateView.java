@@ -52,12 +52,12 @@ public class CircleStateView extends View {
   private Typeface textTypeface = null;
 
   public CircleStateView(Context context, AttributeSet attrs) {
-	super(context, attrs);
+  super(context, attrs);
     init(attrs);
   }
 
   public CircleStateView(Context context, AttributeSet attrs, int defStyleAttr) {
-	super(context, attrs, defStyleAttr);
+  super(context, attrs, defStyleAttr);
     init(attrs);
   }
 
@@ -69,6 +69,9 @@ public class CircleStateView extends View {
    */
   public CircleStateView setCsvWholeForegroundColor(int csvWholeForegroundColor){
     this.csvWholeForegroundColor = getResources().getColor(csvWholeForegroundColor);
+    if (wholeForegroundPaint != null){
+      wholeForegroundPaint.setColor(this.csvWholeForegroundColor);
+    }
     return this;
   }
 
@@ -79,6 +82,9 @@ public class CircleStateView extends View {
    */
   public CircleStateView setCsvInnerBackgroundColor(int csvInnerBackgroundColor){
     this.csvInnerBackgroundColor = getResources().getColor(csvInnerBackgroundColor);
+    if (innerBackgroundPaint != null){
+      innerBackgroundPaint.setColor(this.csvInnerBackgroundColor);
+    }
     return this;
   }
 
@@ -89,6 +95,9 @@ public class CircleStateView extends View {
    */
   public CircleStateView setCsvInnerTextColor(int csvInnerTextColor){
     this.csvInnerTextColor = getResources().getColor(csvInnerTextColor);
+    if (innerTextPaint != null){
+      innerTextPaint.setColor(this.csvInnerTextColor);
+    }
     return this;
   }
 
@@ -99,6 +108,9 @@ public class CircleStateView extends View {
    */
   public CircleStateView setCsvInnerWaterColor(int csvInnerWaterColor){
     this.csvInnerWaterColor = getResources().getColor(csvInnerWaterColor);
+    if (innerWaterPaint != null){
+      innerWaterPaint.setColor(this.csvInnerWaterColor);
+    }
     return this;
   }
 
@@ -109,6 +121,9 @@ public class CircleStateView extends View {
    */
   public CircleStateView setCsvStrokeColor(int csvStrokeColor){
     this.csvStrokeColor = getResources().getColor(csvStrokeColor);
+    if (strokePaint != null) {
+       strokePaint.setColor(this.csvStrokeColor);
+    }
     return this;
   }
 
@@ -137,7 +152,7 @@ public class CircleStateView extends View {
    * @param textTypeface
    * @return
    */
-  public CircleStateView setCsvTextTypeface(Typeface textTypeface) {
+  public CircleStateView setCsvInnerTextTypeface(Typeface textTypeface) {
     this.textTypeface = textTypeface;
     if (innerTextPaint != null){
       innerTextPaint.setTypeface(textTypeface);
@@ -195,8 +210,6 @@ public class CircleStateView extends View {
   @Override
   protected void onDraw(Canvas canvas) {
     super.onDraw(canvas);
-//    Log.e("TAG", "csvInnerWaterProgress = " + csvInnerWaterProgress);
-//    Log.e("TAG", "innerBackgroundRectF = " + innerBackgroundRectF);
     if (csvInnerWaterProgress == 100){
       drawCsvWholeForeground(canvas);
     } else {
@@ -217,7 +230,6 @@ public class CircleStateView extends View {
     csvInnerWaterColor = getResources().getColor(R.color.default_inner_water);
     csvStrokeColor = getResources().getColor(R.color.default_stroke);
 
-    csvStrokeWidth = 6;
     csvInnerWaterProgress = 0;
 
     TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CircleStateView);
@@ -301,7 +313,10 @@ public class CircleStateView extends View {
   }
 
   private void drawCsvInnerText(Canvas canvas){
-    int textSize = (int) ((minWidth - csvStrokeWidth * 2) / 2);
+    int textSize = (int) ((minWidth - csvStrokeWidth * 2) / 3);
+    if (textTypeface != null){
+      textSize = (int) ((minWidth - csvStrokeWidth * 2) / 2);
+    }
     innerTextPaint.setTextSize(textSize);
     Paint.FontMetrics fm = innerTextPaint.getFontMetrics();
     float textHeight = (float) Math.ceil(fm.descent - fm.top);
